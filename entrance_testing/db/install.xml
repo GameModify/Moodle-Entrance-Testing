@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMLDB PATH="local/entrance_testing/db" VERSION="20241024" COMMENT="Install for local_entrance_testing">
+    <TABLES>
+        <TABLE NAME="local_entrance_testing_queue" COMMENT="Queue for entrance testing">
+            <FIELDS>
+                <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+                <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true"/>
+                <FIELD NAME="quizid" TYPE="int" LENGTH="10" NOTNULL="true"/>
+                <FIELD NAME="attemptid" TYPE="int" LENGTH="10" NOTNULL="true"/>
+                <FIELD NAME="state" TYPE="char" LENGTH="20" NOTNULL="false"/>
+                <FIELD NAME="timecreated" TYPE="int" LENGTH="10" NOTNULL="true"/>
+                <FIELD NAME="timesent" TYPE="int" LENGTH="10" NOTNULL="false" DEFAULT="0"/>
+                <FIELD NAME="status" TYPE="text" NOTNULL="false"/>
+                <FIELD NAME="attempts" TYPE="int" LENGTH="4" NOTNULL="true" DEFAULT="0"/>
+            </FIELDS>
+            <KEYS>
+                <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+            </KEYS>
+            <INDEXES>
+                <INDEX NAME="attemptid_idx" FIELDS="attemptid" UNIQUE="false"/>
+                <INDEX NAME="sent_idx" FIELDS="timesent" UNIQUE="false"/>
+            </INDEXES>
+        </TABLE>
+    </TABLES>
+</XMLDB>
