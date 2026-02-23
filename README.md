@@ -9,8 +9,8 @@
 
 ### Ссылки на подробные инструкции
 
-- [Инструкция по Moodle-плагину](README.moodle-module.md)
-- [Инструкция по Data Processing Service](README.data-processing-service.md)
+- [Инструкция по Moodle-плагину](./moodle-module/README.md)
+- [Инструкция по Data Processing Service](./data-processing-service/README.md)
 
 ### Архитектура (кратко)
 
@@ -18,4 +18,5 @@
 2. Плагин `moodle-module` добавляет запись в очередь.
 3. Планировщик задач плагина отправляет данные в FastAPI-сервис.
 4. FastAPI-сервис анализирует попытку через GigaChat и определяет уровень знаний.
+
 5. Сервис вызывает Moodle REST API и зачисляет студента на нужный курс.
